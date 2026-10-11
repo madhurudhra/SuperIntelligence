@@ -12,64 +12,81 @@
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       background: #080a0f;
       color: #e0e6ed;
-      line-height: 1.4;
-      min-height: 100vh;
+      line-height: 1.5;
+      padding-bottom: 30px;
+    }
+    
+    /* Transparent Overlay Hero Background */
+    .hero-container {
+      position: relative;
+      width: 100%;
+      min-height: 320px;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-    }
-    .container { 
-      max-width: 1100px; 
-      width: 100%;
-      margin: 0 auto; 
-      padding: 15px 20px; 
-      text-align: center; 
-    }
-    
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 2px;
-      color: #fff;
-      background: linear-gradient(90deg, #3b82f6, #06b6d4, #60a5fa);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .ticker { font-size: 1.1rem; color: #94a3b8; margin-bottom: 12px; font-weight: 600; letter-spacing: 1px; }
-    
-    /* Hero Banner - Compact */
-    .hero-banner {
-      width: 100%;
-      max-height: 220px;
-      border-radius: 12px;
+      text-align: center;
+      padding: 30px 20px;
       overflow: hidden;
-      border: 1px solid rgba(59, 130, 246, 0.25);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6), 0 0 15px rgba(59, 130, 246, 0.15);
-      margin-bottom: 12px;
+      border-bottom: 1px solid rgba(59, 130, 246, 0.2);
     }
-    .hero-banner img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
+    .hero-bg {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background-image: url('SICC.jpeg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.22; /* Transparent overlay effect */
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
     }
 
-    .description { font-size: 0.9rem; margin-bottom: 12px; color: #cbd5e1; }
+    /* SpaceX-inspired Bold Clean White Title */
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.9);
+    }
+    .ticker { 
+      font-size: 1.2rem; 
+      color: #38bdf8; 
+      font-weight: 700; 
+      letter-spacing: 4px; 
+      margin-bottom: 12px; 
+      text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+    }
+    .description { 
+      font-size: 0.95rem; 
+      color: #cbd5e1; 
+      max-width: 700px; 
+      margin: 0 auto;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.9);
+    }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
     
     /* Action Tabs */
     .action-tabs {
       display: flex;
       justify-content: center;
       gap: 12px;
-      margin-bottom: 15px;
+      margin: 20px 0;
+      flex-wrap: wrap;
     }
     .tab-btn {
-      flex: 1;
-      max-width: 200px;
-      padding: 8px 16px;
+      padding: 10px 22px;
       border: none;
       border-radius: 8px;
       font-weight: bold;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       color: #fff;
       cursor: pointer;
       text-decoration: none;
@@ -81,24 +98,22 @@
     .btn-community { background: linear-gradient(135deg, #0284c7, #06b6d4); color: #fff; }
     .btn-docs { background: linear-gradient(135deg, #1e293b, #334155); color: #38bdf8; border: 1px solid #0284c7; }
 
-    /* 2-Column Grid Dashboard */
+    /* Dashboard Grid Layout */
     .dashboard-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 15px;
-      margin-bottom: 12px;
+      gap: 20px;
       text-align: left;
     }
+    @media (max-width: 768px) { .dashboard-grid { grid-template-columns: 1fr; } }
 
     .card {
       background: rgba(15, 23, 42, 0.85);
       backdrop-filter: blur(10px);
       border-radius: 12px;
-      padding: 16px;
+      padding: 20px;
       border: 1px solid rgba(255, 255, 255, 0.08);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
     
     .btn-primary {
@@ -125,17 +140,17 @@
       margin-top: 8px;
     }
     
-    #walletAddress { font-size: 0.8rem; color: #94a3b8; word-break: break-all; margin-top: 6px; }
-    #tokenBalance { font-size: 0.95rem; color: #10b981; font-weight: bold; margin-top: 4px; }
+    #walletAddress { font-size: 0.8rem; color: #94a3b8; word-break: break-all; margin-top: 8px; }
+    #tokenBalance { font-size: 1rem; color: #10b981; font-weight: bold; margin-top: 4px; }
     
-    .form-group { margin-bottom: 8px; }
-    .form-group label { display: block; margin-bottom: 3px; color: #94a3b8; font-size: 0.8rem; }
+    .form-group { margin-bottom: 10px; }
+    .form-group label { display: block; margin-bottom: 4px; color: #94a3b8; font-size: 0.8rem; }
     .form-group input {
       width: 100%; padding: 8px; background: #0b0f19; border: 1px solid #1e293b;
       color: #fff; border-radius: 6px; font-family: monospace; font-size: 0.85rem;
     }
     
-    .info-box p { margin: 5px 0; font-size: 0.85rem; }
+    .info-box p { margin: 6px 0; font-size: 0.85rem; }
     .info-box strong { color: #f1f5f9; }
     
     /* Interactive Copy Contract Box */
@@ -145,9 +160,9 @@
       margin-top: 4px;
     }
     .contract {
-      background: #0b0f19; padding: 8px 35px 8px 10px; border-radius: 6px;
+      background: #0b0f19; padding: 8px 36px 8px 10px; border-radius: 6px;
       font-family: monospace; word-break: break-all;
-      border: 1px solid #3b82f6; color: #ffffff; font-size: 0.8rem;
+      border: 1px solid #3b82f6; color: #ffffff; font-size: 0.8rem; font-weight: 500;
     }
     .copy-icon {
       position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
@@ -160,27 +175,33 @@
     }
     .flash-green-text { animation: flash-green 0.6s ease-out; }
 
-    .links { margin-top: 8px; }
+    .links { margin-top: 12px; display: flex; gap: 8px; }
     .links a {
-      display: inline-block; margin: 0 4px; padding: 6px 14px;
+      flex: 1; text-align: center; padding: 6px 10px;
       background: #0f172a; color: #cbd5e1; text-decoration: none;
       border-radius: 6px; border: 1px solid #1e293b; font-size: 0.8rem;
     }
     .links a:hover { border-color: #3b82f6; color: #38bdf8; }
-    footer { margin-top: 10px; color: #64748b; font-size: 0.75rem; }
-    #txStatus { margin-top: 6px; font-size: 0.8rem; word-break: break-all; }
+    footer { text-align: center; margin-top: 25px; color: #64748b; font-size: 0.75rem; }
+    #txStatus { margin-top: 8px; font-size: 0.8rem; word-break: break-all; }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Super iNtelligence Crypto Currency</h1>
-    <div class="ticker">SICC</div>
 
-    <!-- Hero Banner Image -->
-    <div class="hero-banner">
-      <img src="SICC.jpeg" alt="Super iNtelligence Crypto Currency Artwork" onerror="this.src='SICC.jpg'">
+  <!-- Transparent Overlay Hero Banner Section -->
+  <div class="hero-container">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <h1>Super iNtelligence Crypto Currency</h1>
+      <div class="ticker">SICC</div>
+      <p class="description">
+        Super iNtelligence Crypto Currency (SICC) is an ERC-20 token deployed on the Sepolia testnet. 
+        A conceptual exploration of artificial superintelligence within a blockchain framework.
+      </p>
     </div>
+  </div>
 
+  <div class="container">
     <!-- Action Tabs -->
     <div class="action-tabs">
       <button class="tab-btn btn-launch" onclick="connectWallet()">Launch App</button>
@@ -188,61 +209,56 @@
       <a href="https://sepolia.etherscan.io/address/0x31CDd1ADe0b4Cb8d91aD65BF06CAA40c6eE18090#code" target="_blank" class="tab-btn btn-docs">Explore Docs</a>
     </div>
 
-    <p class="description">
-      Super iNtelligence Crypto Currency (SICC) is an ERC-20 token deployed on Sepolia testnet.
-    </p>
-
-    <!-- Side-by-Side 2-Column Dashboard Layout -->
+    <!-- Side-by-Side Dashboard Grid -->
     <div class="dashboard-grid">
       <!-- Left Column: Wallet & Transfer Form -->
       <div class="card">
-        <div>
-          <div style="text-align: center; margin-bottom: 10px;">
-            <button id="connectWalletBtn" class="btn-primary" onclick="connectWallet()">Connect Wallet</button>
-            <p id="walletAddress"></p>
-            <p id="tokenBalance"></p>
-            <button id="addTokenBtn" class="btn-secondary" onclick="addTokenToWallet()">Add SICC to MetaMask</button>
-          </div>
-          <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 10px 0;">
-          <h4 style="color: #f8fafc; text-align: center; margin-bottom: 8px;">Transfer SICC</h4>
-          <div class="form-group">
-            <label>Recipient Address</label>
-            <input type="text" id="recipientAddress" placeholder="0x...">
-          </div>
-          <div class="form-group">
-            <label>Amount (SICC)</label>
-            <input type="number" id="transferAmount" placeholder="100">
-          </div>
-          <button class="btn-primary" style="width: 100%;" onclick="transferTokens()">Send SICC</button>
-          <p id="txStatus"></p>
+        <div style="text-align: center; margin-bottom: 15px;">
+          <button id="connectWalletBtn" class="btn-primary" onclick="connectWallet()">Connect Wallet</button>
+          <p id="walletAddress"></p>
+          <p id="tokenBalance"></p>
+          <button id="addTokenBtn" class="btn-secondary" onclick="addTokenToWallet()">Add SICC to MetaMask</button>
         </div>
+        
+        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 12px 0;">
+        
+        <h3 style="color: #f8fafc; text-align: center; margin-bottom: 10px; font-size: 1rem;">Transfer SICC</h3>
+        <div class="form-group">
+          <label>Recipient Address</label>
+          <input type="text" id="recipientAddress" placeholder="0x...">
+        </div>
+        <div class="form-group">
+          <label>Amount (SICC)</label>
+          <input type="number" id="transferAmount" placeholder="100">
+        </div>
+        <button class="btn-primary" style="width: 100%;" onclick="transferTokens()">Send SICC</button>
+        <p id="txStatus"></p>
       </div>
 
       <!-- Right Column: Token Information -->
       <div class="card info-box">
-        <div>
-          <h4 style="color: #f8fafc; margin-bottom: 10px; text-align: center;">Token Information</h4>
-          <p><strong>Network:</strong> Ethereum Sepolia Testnet</p>
-          <p><strong>Token Standard:</strong> ERC-20</p>
-          <p><strong>Total Supply:</strong> 1,000,000,000 SICC</p>
-          <p><strong>Decimals:</strong> 18</p>
-          <p style="margin-top: 10px;"><strong>Contract Address:</strong> (Click to copy)</p>
-          <div class="contract-wrapper" onclick="copyContractAddress()" title="Click to copy address">
-            <div class="contract" id="contractAddress">0x31CDd1ADe0b4Cb8d91aD65BF06CAA40c6eE18090</div>
-            <svg class="copy-icon" viewBox="0 0 24 24">
-              <path d="M19 21H8V7h11m0-2H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2m-3-4H4a2 2 0 00-2 2v14h2V3h12V1z"/>
-            </svg>
-          </div>
+        <h3 style="color: #f8fafc; margin-bottom: 12px; text-align: center; font-size: 1rem;">Token Information</h3>
+        <p><strong>Network:</strong> Ethereum Sepolia Testnet</p>
+        <p><strong>Token Standard:</strong> ERC-20</p>
+        <p><strong>Total Supply:</strong> 1,000,000,000 SICC</p>
+        <p><strong>Decimals:</strong> 18</p>
+        <p style="margin-top: 10px;"><strong>Contract Address:</strong> (Click to copy)</p>
+        <div class="contract-wrapper" onclick="copyContractAddress()" title="Click to copy address">
+          <div class="contract" id="contractAddress">0x31CDd1ADe0b4Cb8d91aD65BF06CAA40c6eE18090</div>
+          <svg class="copy-icon" viewBox="0 0 24 24">
+            <path d="M19 21H8V7h11m0-2H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2m-3-4H4a2 2 0 00-2 2v14h2V3h12V1z"/>
+          </svg>
         </div>
-        <div class="links" style="text-align: center; margin-top: 15px;">
-          <a href="https://sepolia.etherscan.io/token/0x31CDd1ADe0b4Cb8d91aD65BF06CAA40c6eE18090" target="_blank">Etherscan</a>
+
+        <div class="links">
+          <a href="https://sepolia.etherscan.io/token/0x31CDd1ADe0b4Cb8d91aD65BF06CAA40c6eE18090" target="_blank">View on Etherscan</a>
           <a href="https://sepolia.etherscan.io/address/0x31CDd1ADe0b4Cb8d91aD65BF06CAA40c6eE18090#code" target="_blank">Contract Code</a>
         </div>
       </div>
     </div>
 
     <footer>
-      Testnet token for educational purposes only.
+      Super iNtelligence Crypto Currency (SICC) &bull; Testnet token for educational purposes only.
     </footer>
   </div>
 
