@@ -10,30 +10,30 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #090a0f;
-      color: #e0e0e0;
+      background: #080a0f;
+      color: #e0e6ed;
       line-height: 1.6;
     }
-    .container { max-width: 960px; margin: 0 auto; padding: 30px 20px; text-align: center; }
+    .container { max-width: 900px; margin: 0 auto; padding: 30px 20px; text-align: center; }
     
     h1 {
-      font-size: 2.5rem;
+      font-size: 2.4rem;
       margin-bottom: 5px;
       color: #fff;
-      background: linear-gradient(90deg, #3b82f6, #ec4899, #8b5cf6);
+      background: linear-gradient(90deg, #3b82f6, #06b6d4, #60a5fa);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    .ticker { font-size: 1.3rem; color: #a1a1aa; margin-bottom: 25px; font-weight: 600; }
+    .ticker { font-size: 1.2rem; color: #94a3b8; margin-bottom: 25px; font-weight: 600; letter-spacing: 1px; }
     
-    /* Hero Section with Artwork */
+    /* Hero Artwork Section */
     .hero-banner {
       width: 100%;
       border-radius: 16px;
       overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(59, 130, 246, 0.2);
-      margin-bottom: 30px;
+      border: 1px solid rgba(59, 130, 246, 0.25);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(59, 130, 246, 0.15);
+      margin-bottom: 25px;
     }
     .hero-banner img {
       width: 100%;
@@ -41,9 +41,9 @@
       display: block;
     }
 
-    .description { font-size: 1.05rem; margin: 20px 0 30px; color: #ccc; }
+    .description { font-size: 1rem; margin: 20px 0 25px; color: #cbd5e1; }
     
-    /* Vibrant Action Buttons */
+    /* Sleek Crypto Tabs */
     .action-tabs {
       display: flex;
       justify-content: center;
@@ -53,90 +53,110 @@
     }
     .tab-btn {
       flex: 1;
-      min-width: 160px;
-      padding: 14px 20px;
+      min-width: 150px;
+      padding: 12px 20px;
       border: none;
-      border-radius: 12px;
+      border-radius: 10px;
       font-weight: bold;
-      font-size: 1rem;
+      font-size: 0.95rem;
       color: #fff;
       cursor: pointer;
       text-decoration: none;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
       transition: transform 0.2s, box-shadow 0.2s;
     }
     .tab-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
     }
-    .btn-launch { background: linear-gradient(135deg, #ff007a, #ec4899); }
-    .btn-community { background: linear-gradient(135deg, #00f2fe, #4facfe); color: #000; }
-    .btn-docs { background: linear-gradient(135deg, #ff9a9e, #fecfef); color: #000; }
+    .btn-launch { background: linear-gradient(135deg, #2563eb, #3b82f6); }
+    .btn-community { background: linear-gradient(135deg, #0284c7, #06b6d4); color: #fff; }
+    .btn-docs { background: linear-gradient(135deg, #1e293b, #334155); color: #38bdf8; border: 1px solid #0284c7; }
 
-    /* Card Layout */
+    /* Card Panels */
     .card {
-      background: rgba(26, 26, 36, 0.8);
+      background: rgba(15, 23, 42, 0.75);
       backdrop-filter: blur(10px);
-      border-radius: 16px;
-      padding: 25px;
-      margin: 25px 0;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 14px;
+      padding: 22px;
+      margin: 20px 0;
+      border: 1px solid rgba(255, 255, 255, 0.08);
       text-align: left;
     }
     .card-center { text-align: center; }
     
     .btn-primary {
       padding: 12px 28px;
-      background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+      background: linear-gradient(90deg, #2563eb, #0284c7);
       color: #fff;
       border: none;
-      border-radius: 10px;
-      font-size: 1rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
       font-weight: bold;
       cursor: pointer;
       transition: 0.2s;
     }
     .btn-primary:hover { opacity: 0.9; }
     .btn-secondary {
-      background: #181824;
+      background: #0f172a;
       border: 1px solid #3b82f6;
-      color: #3b82f6;
+      color: #60a5fa;
       margin-top: 12px;
-      font-size: 0.9rem;
-      padding: 10px 20px;
+      font-size: 0.85rem;
+      padding: 10px 18px;
       border-radius: 8px;
       cursor: pointer;
       font-weight: 600;
       transition: 0.2s;
     }
-    .btn-secondary:hover { background: #3b82f6; color: #fff; }
+    .btn-secondary:hover { background: #1e3a8a; color: #fff; }
     
-    #walletAddress { margin-top: 15px; font-size: 0.9rem; color: #888; word-break: break-all; }
-    #tokenBalance { margin-top: 5px; font-size: 1.1rem; color: #10b981; font-weight: bold; }
+    #walletAddress { margin-top: 12px; font-size: 0.85rem; color: #94a3b8; word-break: break-all; }
+    #tokenBalance { margin-top: 5px; font-size: 1.05rem; color: #10b981; font-weight: bold; }
     
-    .form-group { margin-bottom: 15px; }
-    .form-group label { display: block; margin-bottom: 5px; color: #bbb; font-size: 0.9rem; }
+    .form-group { margin-bottom: 12px; }
+    .form-group label { display: block; margin-bottom: 5px; color: #94a3b8; font-size: 0.85rem; }
     .form-group input {
-      width: 100%; padding: 12px; background: #0f0f17; border: 1px solid #333;
-      color: #fff; border-radius: 8px; font-family: monospace;
+      width: 100%; padding: 10px; background: #0b0f19; border: 1px solid #1e293b;
+      color: #fff; border-radius: 6px; font-family: monospace;
     }
     
-    .info-box p { margin: 10px 0; }
-    .info-box strong { color: #fff; }
+    .info-box p { margin: 8px 0; }
+    .info-box strong { color: #f1f5f9; }
+    
+    /* Interactive Copy Contract Field */
+    .contract-wrapper {
+      position: relative;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: opacity 0.2s;
+    }
+    .contract-wrapper:hover { opacity: 0.85; }
     .contract {
-      background: #0f0f17; padding: 12px; border-radius: 8px;
-      font-family: monospace; word-break: break-all; margin: 15px 0;
-      border: 1px solid #3b82f6; color: #60a5fa; font-size: 0.9rem;
+      background: #0b0f19; padding: 12px 40px 12px 12px; border-radius: 8px;
+      font-family: monospace; word-break: break-all;
+      border: 1px solid #3b82f6; color: #60a5fa; font-size: 0.85rem;
     }
-    .links { margin-top: 30px; }
+    .copy-icon {
+      position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+      width: 18px; height: 18px; fill: #60a5fa;
+    }
+    @keyframes flash-green {
+      0% { color: #60a5fa; }
+      50% { color: #10b981; border-color: #10b981; }
+      100% { color: #60a5fa; border-color: #3b82f6; }
+    }
+    .flash-green-text { animation: flash-green 0.6s ease-out; }
+
+    .links { margin-top: 25px; }
     .links a {
-      display: inline-block; margin: 8px; padding: 12px 24px;
-      background: #181824; color: #fff; text-decoration: none;
-      border-radius: 8px; border: 1px solid #333; transition: 0.2s;
+      display: inline-block; margin: 6px; padding: 10px 20px;
+      background: #0f172a; color: #cbd5e1; text-decoration: none;
+      border-radius: 8px; border: 1px solid #1e293b; transition: 0.2s; font-size: 0.9rem;
     }
-    .links a:hover { border-color: #3b82f6; }
-    footer { margin-top: 50px; color: #666; font-size: 0.85rem; }
-    #txStatus { margin-top: 10px; font-size: 0.9rem; word-break: break-all; }
+    .links a:hover { border-color: #3b82f6; color: #38bdf8; }
+    footer { margin-top: 40px; color: #64748b; font-size: 0.8rem; }
+    #txStatus { margin-top: 8px; font-size: 0.85rem; word-break: break-all; }
   </style>
 </head>
 <body>
@@ -144,12 +164,12 @@
     <h1>Super iNtelligence Crypto Currency</h1>
     <div class="ticker">SICC</div>
 
-    <!-- Hero Banner Image -->
+    <!-- Hero Banner Image (Matches your uploaded SICC image) -->
     <div class="hero-banner">
-      <img src="sicc-hero.jpg" alt="Super iNtelligence Crypto Currency Artwork">
+      <img src="SICC.jpeg" alt="Super iNtelligence Crypto Currency Artwork" onerror="this.src='SICC.jpg'">
     </div>
 
-    <!-- Interactive Colorful Action Tabs -->
+    <!-- Action Tabs (Blue / Cyan modern crypto palette) -->
     <div class="action-tabs">
       <button class="tab-btn btn-launch" onclick="connectWallet()">Launch App</button>
       <button class="tab-btn btn-community" onclick="alert('Community channels launching soon!')">Join Community</button>
@@ -161,7 +181,7 @@
       It represents a conceptual exploration of artificial superintelligence within a blockchain framework.
     </p>
 
-    <!-- Wallet & Balance Card -->
+    <!-- Wallet & Balance Panel -->
     <div class="card card-center">
       <button id="connectWalletBtn" class="btn-primary" onclick="connectWallet()">Connect Wallet</button>
       <p id="walletAddress"></p>
@@ -171,9 +191,9 @@
       </div>
     </div>
 
-    <!-- Transfer Interface Card -->
+    <!-- Transfer Form Panel -->
     <div class="card">
-      <h3 style="margin-bottom: 15px; color: #fff; text-align: center;">Transfer SICC</h3>
+      <h3 style="margin-bottom: 12px; color: #f8fafc; text-align: center;">Transfer SICC</h3>
       <div class="form-group">
         <label>Recipient Address</label>
         <input type="text" id="recipientAddress" placeholder="0x...">
@@ -186,130 +206,20 @@
       <p id="txStatus"></p>
     </div>
 
-    <!-- Token Information Card -->
+    <!-- Token Information Panel -->
     <div class="card info-box">
       <p><strong>Network:</strong> Ethereum Sepolia Testnet</p>
       <p><strong>Token Standard:</strong> ERC-20</p>
       <p><strong>Total Supply:</strong> 1,000,000,000 SICC</p>
       <p><strong>Decimals:</strong> 18</p>
-      <p><strong>Contract Address:</strong></p>
-      <div class="contract">0x31CDd1ADe0b4Cb8d91aD65BF06CAA40c6eE18090</div>
+      <p><strong>Contract Address:</strong> (Click to copy)</p>
+      <div class="contract-wrapper" onclick="copyContractAddress()" title="Click to copy address">
+        <div class="contract" id="contractAddress">0x31CDd1ADe0b4Cb8d91aD65BF06CAA40c6eE18090</div>
+        <svg class="copy-icon" viewBox="0 0 24 24">
+          <path d="M19 21H8V7h11m0-2H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2m-3-4H4a2 2 0 00-2 2v14h2V3h12V1z"/>
+        </svg>
+      </div>
     </div>
 
-    <!-- External Explorer Links -->
-    <div class="links">
-      <a href="https://sepolia.etherscan.io/token/0x31CDd1ADe0b4Cb8d91aD65BF06CAA40c6eE18090" target="_blank">View on Etherscan</a>
-      <a href="https://sepolia.etherscan.io/address/0x31CDd1ADe0b4Cb8d91aD65BF06CAA40c6eE18090#code" target="_blank">View Contract Code</a>
-    </div>
-
-    <footer>
-      Testnet token for educational and demonstration purposes only.<br>
-      Not a financial product. No real-world value.
-    </footer>
-  </div>
-
-  <!-- Web3 Integration Script -->
-  <script>
-    const CONTRACT_ADDRESS = "0x31CDd1ADe0b4Cb8d91aD65BF06CAA40c6eE18090";
-    const ABI = [
-      "function balanceOf(address owner) view returns (uint256)",
-      "function decimals() view returns (uint8)",
-      "function transfer(address to, uint256 amount) returns (bool)"
-    ];
-
-    async function connectWallet() {
-      if (typeof window.ethereum !== 'undefined') {
-        try {
-          const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-          const account = accounts[0];
-          
-          document.getElementById('connectWalletBtn').innerText = 'Wallet Connected';
-          document.getElementById('walletAddress').innerText = 'Address: ' + account;
-
-          await fetchBalance(account);
-        } catch (error) {
-          console.error('User rejected connection', error);
-        }
-      } else {
-        alert('Please install MetaMask or another Web3 wallet to connect.');
-      }
-    }
-
-    async function fetchBalance(walletAddress) {
-      try {
-        const provider = new ethers.providers.Web3Provider(window.ethereum);
-        const contract = new ethers.Contract(CONTRACT_ADDRESS, ABI, provider);
-        
-        const balanceWei = await contract.balanceOf(walletAddress);
-        const decimals = await contract.decimals();
-        const balanceFormatted = ethers.utils.formatUnits(balanceWei, decimals);
-
-        document.getElementById('tokenBalance').innerText = 'SICC Balance: ' + balanceFormatted + ' SICC';
-      } catch (error) {
-        console.error("Error fetching balance:", error);
-        document.getElementById('tokenBalance').innerText = 'SICC Balance: Error loading';
-      }
-    }
-
-    async function addTokenToWallet() {
-      if (typeof window.ethereum !== 'undefined') {
-        try {
-          await window.ethereum.request({
-            method: 'wallet_watchAsset',
-            params: {
-              type: 'ERC20',
-              options: {
-                address: CONTRACT_ADDRESS,
-                symbol: 'SICC',
-                decimals: 18,
-              },
-            },
-          });
-        } catch (error) {
-          console.error('Error adding token:', error);
-        }
-      } else {
-        alert('Please install MetaMask to use this feature.');
-      }
-    }
-
-    async function transferTokens() {
-      const recipient = document.getElementById('recipientAddress').value;
-      const amount = document.getElementById('transferAmount').value;
-      const statusEl = document.getElementById('txStatus');
-
-      if (!recipient || !amount) {
-        alert("Please fill in both the recipient address and amount.");
-        return;
-      }
-
-      try {
-        statusEl.style.color = "#3b82f6";
-        statusEl.innerText = "Waiting for transaction confirmation in MetaMask...";
-
-        const provider = new ethers.providers.Web3Provider(window.ethereum);
-        const signer = provider.getSigner();
-        const contract = new ethers.Contract(CONTRACT_ADDRESS, ABI, signer);
-
-        const parsedAmount = ethers.utils.parseUnits(amount, 18);
-        const tx = await contract.transfer(recipient, parsedAmount);
-
-        statusEl.innerText = "Transaction sent: " + tx.hash + ". Waiting for block confirmation...";
-        await tx.wait();
-
-        statusEl.style.color = "#10b981";
-        statusEl.innerText = "Transfer successful!";
-        
-        const accounts = await window.ethereum.request({ method: 'eth_accounts' });
-        if (accounts.length > 0) {
-          await fetchBalance(accounts[0]);
-        }
-      } catch (error) {
-        console.error("Transfer failed:", error);
-        statusEl.style.color = "#ef4444";
-        statusEl.innerText = "Transfer failed: " + (error.data?.message || error.message);
-      }
-    }
-  </script>
-</body>
-</html>
+    <!-- Block Explorer Links -->
+    <div
