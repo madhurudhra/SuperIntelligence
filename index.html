@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Super iNtelligence Crypto Currency (SICC)</title>
+  <!-- Ethers.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -21,18 +23,10 @@
     h1 { font-size: 2.5rem; margin-bottom: 10px; color: #fff; }
     .ticker { font-size: 1.4rem; color: #888; margin-bottom: 30px; }
     .description { font-size: 1.1rem; margin: 30px 0; color: #ccc; }
-    .info-box {
+    .wallet-section {
       background: #1a1a1a; border-radius: 12px; padding: 25px;
-      margin: 30px 0; text-align: left; border: 1px solid #333;
+      margin: 30px 0; border: 1px solid #333;
     }
-    .info-box p { margin: 10px 0; }
-    .info-box strong { color: #fff; }
-    .contract {
-      background: #111; padding: 12px; border-radius: 8px;
-      font-family: monospace; word-break: break-all; margin: 15px 0;
-      border: 1px solid #333; color: #3b82f6;
-    }
-    .wallet-section { margin: 30px 0; }
     #connectWalletBtn {
       padding: 12px 24px;
       background: #3b82f6;
@@ -45,6 +39,20 @@
       transition: 0.2s;
     }
     #connectWalletBtn:hover { background: #2563eb; }
+    #walletAddress { margin-top: 15px; font-size: 0.9rem; color: #888; word-break: break-all; }
+    #tokenBalance { margin-top: 5px; font-size: 1rem; color: #3b82f6; font-weight: bold; }
+    
+    .info-box {
+      background: #1a1a1a; border-radius: 12px; padding: 25px;
+      margin: 30px 0; text-align: left; border: 1px solid #333;
+    }
+    .info-box p { margin: 10px 0; }
+    .info-box strong { color: #fff; }
+    .contract {
+      background: #111; padding: 12px; border-radius: 8px;
+      font-family: monospace; word-break: break-all; margin: 15px 0;
+      border: 1px solid #333; color: #3b82f6; font-size: 0.9rem;
+    }
     .links { margin-top: 30px; }
     .links a {
       display: inline-block; margin: 10px; padding: 12px 24px;
@@ -66,11 +74,14 @@
       It represents a conceptual exploration of artificial superintelligence within a blockchain framework.
     </p>
 
+    <!-- Wallet & Balance Section -->
     <div class="wallet-section">
       <button id="connectWalletBtn" onclick="connectWallet()">Connect Wallet</button>
-      <p id="walletAddress" style="margin-top: 10px; font-size: 0.9rem; color: #888;"></p>
+      <p id="walletAddress"></p>
+      <p id="tokenBalance"></p>
     </div>
 
+    <!-- Token Information Box -->
     <div class="info-box">
       <p><strong>Network:</strong> Ethereum Sepolia Testnet</p>
       <p><strong>Token Standard:</strong> ERC-20</p>
@@ -80,6 +91,7 @@
       <div class="contract">0x31CDd1ADe0b4Cb8d91aD65BF06CAA40c6eE18090</div>
     </div>
 
+    <!-- External Links -->
     <div class="links">
       <a href="https://sepolia.etherscan.io/token/0x31CDd1ADe0b4Cb8d91aD65BF06CAA40c6eE18090" target="_blank">View on Etherscan</a>
       <a href="https://sepolia.etherscan.io/address/0x31CDd1ADe0b4Cb8d91aD65BF06CAA40c6eE18090#code" target="_blank">View Contract Code</a>
@@ -91,20 +103,46 @@
     </footer>
   </div>
 
+  <!-- Web3 and Balance Script -->
   <script>
+    const CONTRACT_ADDRESS = "0x31CDd1ADe0b4Cb8d91aD65BF06CAA40c6eE18090";
+    const ABI = [
+      "function balanceOf(address owner) view returns (uint256)",
+      "function decimals() view returns (uint8)"
+    ];
+
     async function connectWallet() {
       if (typeof window.ethereum !== 'undefined') {
         try {
           const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
           const account = accounts[0];
-          const shortAddr = account.substring(0, 6) + '...' + account.substring(account.length - 4);
+          
           document.getElementById('connectWalletBtn').innerText = 'Connected';
-          document.getElementById('walletAddress').innerText = 'Address: ' + shortAddr;
+          document.getElementById('walletAddress').innerText = 'Address: ' + account;
+
+          // Fetch Token Balance
+          await fetchBalance(account);
         } catch (error) {
-          console.error('User rejected connection');
+          console.error('User rejected connection', error);
         }
       } else {
         alert('Please install MetaMask or another Web3 wallet to connect.');
+      }
+    }
+
+    async function fetchBalance(walletAddress) {
+      try {
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const contract = new ethers.Contract(CONTRACT_ADDRESS, ABI, provider);
+        
+        const balanceWei = await contract.balanceOf(walletAddress);
+        const decimals = await contract.decimals();
+        const balanceFormatted = ethers.utils.formatUnits(balanceWei, decimals);
+
+        document.getElementById('tokenBalance').innerText = 'SICC Balance: ' + balanceFormatted + ' SICC';
+      } catch (error) {
+        console.error("Error fetching balance:", error);
+        document.getElementById('tokenBalance').innerText = 'SICC Balance: Error loading';
       }
     }
   </script>
