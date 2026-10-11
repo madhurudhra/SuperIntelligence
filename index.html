@@ -30,15 +30,28 @@
     .contract {
       background: #111; padding: 12px; border-radius: 8px;
       font-family: monospace; word-break: break-all; margin: 15px 0;
-      border: 1px solid #333;
+      border: 1px solid #333; color: #3b82f6;
     }
-    .links { margin-top: 40px; }
+    .wallet-section { margin: 30px 0; }
+    #connectWalletBtn {
+      padding: 12px 24px;
+      background: #3b82f6;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    #connectWalletBtn:hover { background: #2563eb; }
+    .links { margin-top: 30px; }
     .links a {
       display: inline-block; margin: 10px; padding: 12px 24px;
       background: #222; color: #fff; text-decoration: none;
       border-radius: 8px; border: 1px solid #444; transition: 0.2s;
     }
-    .links a:hover {background: #333;}
+    .links a:hover { background: #333; }
     footer { margin-top: 60px; color: #666; font-size: 0.9rem; }
   </style>
 </head>
@@ -53,6 +66,11 @@
       It represents a conceptual exploration of artificial superintelligence within a blockchain framework.
     </p>
 
+    <div class="wallet-section">
+      <button id="connectWalletBtn" onclick="connectWallet()">Connect Wallet</button>
+      <p id="walletAddress" style="margin-top: 10px; font-size: 0.9rem; color: #888;"></p>
+    </div>
+
     <div class="info-box">
       <p><strong>Network:</strong> Ethereum Sepolia Testnet</p>
       <p><strong>Token Standard:</strong> ERC-20</p>
@@ -64,7 +82,7 @@
 
     <div class="links">
       <a href="https://sepolia.etherscan.io/token/0x31CDd1ADe0b4Cb8d91aD65BF06CAA40c6eE18090" target="_blank">View on Etherscan</a>
-      <a href="https://sepolia.etherscan.io/address/0x31CDd1ADe0b4Cb8d91aD65BF06CAA40c6eE18090#code" target="_blank">View Contract</a>
+      <a href="https://sepolia.etherscan.io/address/0x31CDd1ADe0b4Cb8d91aD65BF06CAA40c6eE18090#code" target="_blank">View Contract Code</a>
     </div>
 
     <footer>
@@ -72,5 +90,23 @@
       Not a financial product. No real-world value.
     </footer>
   </div>
+
+  <script>
+    async function connectWallet() {
+      if (typeof window.ethereum !== 'undefined') {
+        try {
+          const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+          const account = accounts[0];
+          const shortAddr = account.substring(0, 6) + '...' + account.substring(account.length - 4);
+          document.getElementById('connectWalletBtn').innerText = 'Connected';
+          document.getElementById('walletAddress').innerText = 'Address: ' + shortAddr;
+        } catch (error) {
+          console.error('User rejected connection');
+        }
+      } else {
+        alert('Please install MetaMask or another Web3 wallet to connect.');
+      }
+    }
+  </script>
 </body>
 </html>
