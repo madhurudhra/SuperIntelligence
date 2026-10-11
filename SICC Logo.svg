@@ -1,0 +1,32 @@
+<svg viewBox="0 0 220 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logoGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#9333ea"/>
+    </linearGradient>
+    <filter id="svgGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  
+  <!-- Hexagon Icon Node -->
+  <polygon points="25,8 45,18 45,42 25,52 5,42 5,18" stroke="url(#logoGlow)" stroke-width="2.5" fill="#090a0f" filter="url(#svgGlow)"/>
+  <circle cx="25" cy="30" r="5" fill="#38bdf8" filter="url(#svgGlow)"/>
+  
+  <!-- Sicc Typography in Logo -->
+  <!-- S (Capital) -->
+  <path d="M72 18 C72 12, 58 12, 58 21 C58 30, 72 27, 72 36 C72 45, 58 45, 58 39" stroke="#ffffff" stroke-width="6" stroke-linecap="round" fill="none" filter="url(#svgGlow)"/>
+  <!-- i (lowercase with glowing dot) -->
+  <circle cx="86" cy="22" r="3" fill="#38bdf8" filter="url(#svgGlow)"/>
+  <path d="M86 28 L86 42" stroke="#ffffff" stroke-width="6" stroke-linecap="round" filter="url(#svgGlow)"/>
+  <!-- c (lowercase) -->
+  <path d="M116 28 C110 24, 98 26, 98 35 C98 44, 110 46, 116 42" stroke="#38bdf8" stroke-width="6" stroke-linecap="round" fill="none" filter="url(#svgGlow)"/>
+  <!-- c (lowercase) -->
+  <path d="M142 28 C136 24, 124 26, 124 35 C124 44, 136 46, 142 42" stroke="#9333ea" stroke-width="6" stroke-linecap="round" fill="none" filter="url(#svgGlow)"/>
+  
+  <!-- Neural Connection Line -->
+  <path d="M152 35 L205 35" stroke="url(#logoGlow)" stroke-width="2" stroke-dasharray="4 2"/>
+  <circle cx="210" cy="35" r="3" fill="#38bdf8"/>
+</svg>
