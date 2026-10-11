@@ -12,86 +12,102 @@
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       background: #080a0f;
       color: #e0e6ed;
-      line-height: 1.6;
+      line-height: 1.4;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    .container { max-width: 900px; margin: 0 auto; padding: 30px 20px; text-align: center; }
+    .container { 
+      max-width: 1100px; 
+      width: 100%;
+      margin: 0 auto; 
+      padding: 15px 20px; 
+      text-align: center; 
+    }
     
     h1 {
-      font-size: 2.4rem;
-      margin-bottom: 5px;
+      font-size: 2rem;
+      margin-bottom: 2px;
       color: #fff;
       background: linear-gradient(90deg, #3b82f6, #06b6d4, #60a5fa);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    .ticker { font-size: 1.2rem; color: #94a3b8; margin-bottom: 25px; font-weight: 600; letter-spacing: 1px; }
+    .ticker { font-size: 1.1rem; color: #94a3b8; margin-bottom: 12px; font-weight: 600; letter-spacing: 1px; }
     
-    /* Hero Artwork Section */
+    /* Hero Banner - Compact */
     .hero-banner {
       width: 100%;
-      border-radius: 16px;
+      max-height: 220px;
+      border-radius: 12px;
       overflow: hidden;
       border: 1px solid rgba(59, 130, 246, 0.25);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(59, 130, 246, 0.15);
-      margin-bottom: 25px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6), 0 0 15px rgba(59, 130, 246, 0.15);
+      margin-bottom: 12px;
     }
     .hero-banner img {
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: cover;
       display: block;
     }
 
-    .description { font-size: 1rem; margin: 20px 0 25px; color: #cbd5e1; }
+    .description { font-size: 0.9rem; margin-bottom: 12px; color: #cbd5e1; }
     
-    /* Sleek Crypto Tabs */
+    /* Action Tabs */
     .action-tabs {
       display: flex;
       justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-      margin: 25px 0;
+      gap: 12px;
+      margin-bottom: 15px;
     }
     .tab-btn {
       flex: 1;
-      min-width: 150px;
-      padding: 12px 20px;
+      max-width: 200px;
+      padding: 8px 16px;
       border: none;
-      border-radius: 10px;
+      border-radius: 8px;
       font-weight: bold;
-      font-size: 0.95rem;
+      font-size: 0.85rem;
       color: #fff;
       cursor: pointer;
       text-decoration: none;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: transform 0.2s;
     }
-    .tab-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
-    }
+    .tab-btn:hover { transform: translateY(-2px); }
     .btn-launch { background: linear-gradient(135deg, #2563eb, #3b82f6); }
     .btn-community { background: linear-gradient(135deg, #0284c7, #06b6d4); color: #fff; }
     .btn-docs { background: linear-gradient(135deg, #1e293b, #334155); color: #38bdf8; border: 1px solid #0284c7; }
 
-    /* Card Panels */
-    .card {
-      background: rgba(15, 23, 42, 0.75);
-      backdrop-filter: blur(10px);
-      border-radius: 14px;
-      padding: 22px;
-      margin: 20px 0;
-      border: 1px solid rgba(255, 255, 255, 0.08);
+    /* 2-Column Grid Dashboard */
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-bottom: 12px;
       text-align: left;
     }
-    .card-center { text-align: center; }
+
+    .card {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
     
     .btn-primary {
-      padding: 12px 28px;
+      padding: 10px 20px;
       background: linear-gradient(90deg, #2563eb, #0284c7);
       color: #fff;
       border: none;
-      border-radius: 8px;
-      font-size: 0.95rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
       font-weight: bold;
       cursor: pointer;
       transition: 0.2s;
@@ -101,45 +117,41 @@
       background: #0f172a;
       border: 1px solid #3b82f6;
       color: #60a5fa;
-      margin-top: 12px;
-      font-size: 0.85rem;
-      padding: 10px 18px;
-      border-radius: 8px;
+      font-size: 0.8rem;
+      padding: 8px 14px;
+      border-radius: 6px;
       cursor: pointer;
       font-weight: 600;
-      transition: 0.2s;
+      margin-top: 8px;
     }
-    .btn-secondary:hover { background: #1e3a8a; color: #fff; }
     
-    #walletAddress { margin-top: 12px; font-size: 0.85rem; color: #94a3b8; word-break: break-all; }
-    #tokenBalance { margin-top: 5px; font-size: 1.05rem; color: #10b981; font-weight: bold; }
+    #walletAddress { font-size: 0.8rem; color: #94a3b8; word-break: break-all; margin-top: 6px; }
+    #tokenBalance { font-size: 0.95rem; color: #10b981; font-weight: bold; margin-top: 4px; }
     
-    .form-group { margin-bottom: 12px; }
-    .form-group label { display: block; margin-bottom: 5px; color: #94a3b8; font-size: 0.85rem; }
+    .form-group { margin-bottom: 8px; }
+    .form-group label { display: block; margin-bottom: 3px; color: #94a3b8; font-size: 0.8rem; }
     .form-group input {
-      width: 100%; padding: 10px; background: #0b0f19; border: 1px solid #1e293b;
-      color: #fff; border-radius: 6px; font-family: monospace;
+      width: 100%; padding: 8px; background: #0b0f19; border: 1px solid #1e293b;
+      color: #fff; border-radius: 6px; font-family: monospace; font-size: 0.85rem;
     }
     
-    .info-box p { margin: 8px 0; }
+    .info-box p { margin: 5px 0; font-size: 0.85rem; }
     .info-box strong { color: #f1f5f9; }
     
-    /* Interactive Copy Contract Field with Pure White Text */
+    /* Interactive Copy Contract Box */
     .contract-wrapper {
       position: relative;
       cursor: pointer;
-      margin-top: 8px;
-      transition: opacity 0.2s;
+      margin-top: 4px;
     }
-    .contract-wrapper:hover { opacity: 0.85; }
     .contract {
-      background: #0b0f19; padding: 12px 40px 12px 12px; border-radius: 8px;
+      background: #0b0f19; padding: 8px 35px 8px 10px; border-radius: 6px;
       font-family: monospace; word-break: break-all;
-      border: 1px solid #3b82f6; color: #ffffff; font-size: 0.85rem; font-weight: 500;
+      border: 1px solid #3b82f6; color: #ffffff; font-size: 0.8rem;
     }
     .copy-icon {
-      position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
-      width: 18px; height: 18px; fill: #ffffff;
+      position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
+      width: 16px; height: 16px; fill: #ffffff;
     }
     @keyframes flash-green {
       0% { color: #ffffff; }
@@ -148,15 +160,15 @@
     }
     .flash-green-text { animation: flash-green 0.6s ease-out; }
 
-    .links { margin-top: 25px; }
+    .links { margin-top: 8px; }
     .links a {
-      display: inline-block; margin: 6px; padding: 10px 20px;
+      display: inline-block; margin: 0 4px; padding: 6px 14px;
       background: #0f172a; color: #cbd5e1; text-decoration: none;
-      border-radius: 8px; border: 1px solid #1e293b; transition: 0.2s; font-size: 0.9rem;
+      border-radius: 6px; border: 1px solid #1e293b; font-size: 0.8rem;
     }
     .links a:hover { border-color: #3b82f6; color: #38bdf8; }
-    footer { margin-top: 40px; color: #64748b; font-size: 0.8rem; }
-    #txStatus { margin-top: 8px; font-size: 0.85rem; word-break: break-all; }
+    footer { margin-top: 10px; color: #64748b; font-size: 0.75rem; }
+    #txStatus { margin-top: 6px; font-size: 0.8rem; word-break: break-all; }
   </style>
 </head>
 <body>
@@ -177,63 +189,64 @@
     </div>
 
     <p class="description">
-      Super iNtelligence Crypto Currency (SICC) is an ERC-20 token deployed on the Sepolia testnet.
-      It represents a conceptual exploration of artificial superintelligence within a blockchain framework.
+      Super iNtelligence Crypto Currency (SICC) is an ERC-20 token deployed on Sepolia testnet.
     </p>
 
-    <!-- Wallet & Balance Panel -->
-    <div class="card card-center">
-      <button id="connectWalletBtn" class="btn-primary" onclick="connectWallet()">Connect Wallet</button>
-      <p id="walletAddress"></p>
-      <p id="tokenBalance"></p>
-      <div>
-        <button id="addTokenBtn" class="btn-secondary" onclick="addTokenToWallet()">Add SICC to MetaMask</button>
+    <!-- Side-by-Side 2-Column Dashboard Layout -->
+    <div class="dashboard-grid">
+      <!-- Left Column: Wallet & Transfer Form -->
+      <div class="card">
+        <div>
+          <div style="text-align: center; margin-bottom: 10px;">
+            <button id="connectWalletBtn" class="btn-primary" onclick="connectWallet()">Connect Wallet</button>
+            <p id="walletAddress"></p>
+            <p id="tokenBalance"></p>
+            <button id="addTokenBtn" class="btn-secondary" onclick="addTokenToWallet()">Add SICC to MetaMask</button>
+          </div>
+          <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 10px 0;">
+          <h4 style="color: #f8fafc; text-align: center; margin-bottom: 8px;">Transfer SICC</h4>
+          <div class="form-group">
+            <label>Recipient Address</label>
+            <input type="text" id="recipientAddress" placeholder="0x...">
+          </div>
+          <div class="form-group">
+            <label>Amount (SICC)</label>
+            <input type="number" id="transferAmount" placeholder="100">
+          </div>
+          <button class="btn-primary" style="width: 100%;" onclick="transferTokens()">Send SICC</button>
+          <p id="txStatus"></p>
+        </div>
       </div>
-    </div>
 
-    <!-- Transfer Form Panel -->
-    <div class="card">
-      <h3 style="margin-bottom: 12px; color: #f8fafc; text-align: center;">Transfer SICC</h3>
-      <div class="form-group">
-        <label>Recipient Address</label>
-        <input type="text" id="recipientAddress" placeholder="0x...">
+      <!-- Right Column: Token Information -->
+      <div class="card info-box">
+        <div>
+          <h4 style="color: #f8fafc; margin-bottom: 10px; text-align: center;">Token Information</h4>
+          <p><strong>Network:</strong> Ethereum Sepolia Testnet</p>
+          <p><strong>Token Standard:</strong> ERC-20</p>
+          <p><strong>Total Supply:</strong> 1,000,000,000 SICC</p>
+          <p><strong>Decimals:</strong> 18</p>
+          <p style="margin-top: 10px;"><strong>Contract Address:</strong> (Click to copy)</p>
+          <div class="contract-wrapper" onclick="copyContractAddress()" title="Click to copy address">
+            <div class="contract" id="contractAddress">0x31CDd1ADe0b4Cb8d91aD65BF06CAA40c6eE18090</div>
+            <svg class="copy-icon" viewBox="0 0 24 24">
+              <path d="M19 21H8V7h11m0-2H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2m-3-4H4a2 2 0 00-2 2v14h2V3h12V1z"/>
+            </svg>
+          </div>
+        </div>
+        <div class="links" style="text-align: center; margin-top: 15px;">
+          <a href="https://sepolia.etherscan.io/token/0x31CDd1ADe0b4Cb8d91aD65BF06CAA40c6eE18090" target="_blank">Etherscan</a>
+          <a href="https://sepolia.etherscan.io/address/0x31CDd1ADe0b4Cb8d91aD65BF06CAA40c6eE18090#code" target="_blank">Contract Code</a>
+        </div>
       </div>
-      <div class="form-group">
-        <label>Amount (SICC)</label>
-        <input type="number" id="transferAmount" placeholder="100">
-      </div>
-      <button class="btn-primary" style="width: 100%;" onclick="transferTokens()">Send SICC</button>
-      <p id="txStatus"></p>
-    </div>
-
-    <!-- Token Information Panel -->
-    <div class="card info-box">
-      <p><strong>Network:</strong> Ethereum Sepolia Testnet</p>
-      <p><strong>Token Standard:</strong> ERC-20</p>
-      <p><strong>Total Supply:</strong> 1,000,000,000 SICC</p>
-      <p><strong>Decimals:</strong> 18</p>
-      <p><strong>Contract Address:</strong> (Click to copy)</p>
-      <div class="contract-wrapper" onclick="copyContractAddress()" title="Click to copy address">
-        <div class="contract" id="contractAddress">0x31CDd1ADe0b4Cb8d91aD65BF06CAA40c6eE18090</div>
-        <svg class="copy-icon" viewBox="0 0 24 24">
-          <path d="M19 21H8V7h11m0-2H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2m-3-4H4a2 2 0 00-2 2v14h2V3h12V1z"/>
-        </svg>
-      </div>
-    </div>
-
-    <!-- Block Explorer Links -->
-    <div class="links">
-      <a href="https://sepolia.etherscan.io/token/0x31CDd1ADe0b4Cb8d91aD65BF06CAA40c6eE18090" target="_blank">View on Etherscan</a>
-      <a href="https://sepolia.etherscan.io/address/0x31CDd1ADe0b4Cb8d91aD65BF06CAA40c6eE18090#code" target="_blank">View Contract Code</a>
     </div>
 
     <footer>
-      Testnet token for educational and demonstration purposes only.<br>
-      Not a financial product. No real-world value.
+      Testnet token for educational purposes only.
     </footer>
   </div>
 
-  <!-- Web3 and Interactive Logic -->
+  <!-- Web3 Logic -->
   <script>
     const CONTRACT_ADDRESS = "0x31CDd1ADe0b4Cb8d91aD65BF06CAA40c6eE18090";
     const ABI = [
@@ -256,7 +269,7 @@
           console.error('User rejected connection', error);
         }
       } else {
-        alert('Please install MetaMask or another Web3 wallet to connect.');
+        alert('Please install MetaMask to connect.');
       }
     }
 
@@ -310,7 +323,7 @@
 
       try {
         statusEl.style.color = "#3b82f6";
-        statusEl.innerText = "Waiting for transaction confirmation in MetaMask...";
+        statusEl.innerText = "Confirming in MetaMask...";
 
         const provider = new ethers.providers.Web3Provider(window.ethereum);
         const signer = provider.getSigner();
@@ -319,7 +332,7 @@
         const parsedAmount = ethers.utils.parseUnits(amount, 18);
         const tx = await contract.transfer(recipient, parsedAmount);
 
-        statusEl.innerText = "Transaction sent: " + tx.hash + ". Waiting for block confirmation...";
+        statusEl.innerText = "Transaction sent: " + tx.hash;
         await tx.wait();
 
         statusEl.style.color = "#10b981";
@@ -332,7 +345,7 @@
       } catch (error) {
         console.error("Transfer failed:", error);
         statusEl.style.color = "#ef4444";
-        statusEl.innerText = "Transfer failed: " + (error.data?.message || error.message);
+        statusEl.innerText = "Transfer failed";
       }
     }
 
