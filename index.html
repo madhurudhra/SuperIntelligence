@@ -10,93 +10,168 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #0f0f0f;
+      background: #090a0f;
       color: #e0e0e0;
       line-height: 1.6;
     }
-    .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; text-align: center; }
-    .logo {
-      width: 120px; height: 120px; background: #1a1a1a; border-radius: 50%;
-      margin: 0 auto 30px; display: flex; align-items: center; justify-content: center;
-      font-size: 48px; border: 2px solid #333;
-    }
-    h1 { font-size: 2.5rem; margin-bottom: 10px; color: #fff; }
-    .ticker { font-size: 1.4rem; color: #888; margin-bottom: 30px; }
-    .description { font-size: 1.1rem; margin: 30px 0; color: #ccc; }
+    .container { max-width: 960px; margin: 0 auto; padding: 30px 20px; text-align: center; }
     
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 5px;
+      color: #fff;
+      background: linear-gradient(90deg, #3b82f6, #ec4899, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .ticker { font-size: 1.3rem; color: #a1a1aa; margin-bottom: 25px; font-weight: 600; }
+    
+    /* Hero Section with Artwork */
+    .hero-banner {
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(59, 130, 246, 0.2);
+      margin-bottom: 30px;
+    }
+    .hero-banner img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .description { font-size: 1.05rem; margin: 20px 0 30px; color: #ccc; }
+    
+    /* Vibrant Action Buttons */
+    .action-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin: 25px 0;
+    }
+    .tab-btn {
+      flex: 1;
+      min-width: 160px;
+      padding: 14px 20px;
+      border: none;
+      border-radius: 12px;
+      font-weight: bold;
+      font-size: 1rem;
+      color: #fff;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .tab-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+    }
+    .btn-launch { background: linear-gradient(135deg, #ff007a, #ec4899); }
+    .btn-community { background: linear-gradient(135deg, #00f2fe, #4facfe); color: #000; }
+    .btn-docs { background: linear-gradient(135deg, #ff9a9e, #fecfef); color: #000; }
+
+    /* Card Layout */
     .card {
-      background: #1a1a1a; border-radius: 12px; padding: 25px;
-      margin: 30px 0; border: 1px solid #333; text-align: left;
+      background: rgba(26, 26, 36, 0.8);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 25px;
+      margin: 25px 0;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: left;
     }
     .card-center { text-align: center; }
     
-    .btn {
-      padding: 12px 24px;
-      background: #3b82f6;
+    .btn-primary {
+      padding: 12px 28px;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6);
       color: #fff;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       font-size: 1rem;
       font-weight: bold;
       cursor: pointer;
       transition: 0.2s;
     }
-    .btn:hover { background: #2563eb; }
+    .btn-primary:hover { opacity: 0.9; }
     .btn-secondary {
-      background: #222; border: 1px solid #444; margin-top: 10px; font-size: 0.9rem; padding: 10px 20px;
+      background: #181824;
+      border: 1px solid #3b82f6;
+      color: #3b82f6;
+      margin-top: 12px;
+      font-size: 0.9rem;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.2s;
     }
-    .btn-secondary:hover { background: #333; }
+    .btn-secondary:hover { background: #3b82f6; color: #fff; }
     
     #walletAddress { margin-top: 15px; font-size: 0.9rem; color: #888; word-break: break-all; }
-    #tokenBalance { margin-top: 5px; font-size: 1rem; color: #3b82f6; font-weight: bold; }
+    #tokenBalance { margin-top: 5px; font-size: 1.1rem; color: #10b981; font-weight: bold; }
     
     .form-group { margin-bottom: 15px; }
     .form-group label { display: block; margin-bottom: 5px; color: #bbb; font-size: 0.9rem; }
     .form-group input {
-      width: 100%; padding: 10px; background: #111; border: 1px solid #333;
-      color: #fff; border-radius: 6px; font-family: monospace;
+      width: 100%; padding: 12px; background: #0f0f17; border: 1px solid #333;
+      color: #fff; border-radius: 8px; font-family: monospace;
     }
     
     .info-box p { margin: 10px 0; }
     .info-box strong { color: #fff; }
     .contract {
-      background: #111; padding: 12px; border-radius: 8px;
+      background: #0f0f17; padding: 12px; border-radius: 8px;
       font-family: monospace; word-break: break-all; margin: 15px 0;
-      border: 1px solid #333; color: #3b82f6; font-size: 0.9rem;
+      border: 1px solid #3b82f6; color: #60a5fa; font-size: 0.9rem;
     }
     .links { margin-top: 30px; }
     .links a {
-      display: inline-block; margin: 10px; padding: 12px 24px;
-      background: #222; color: #fff; text-decoration: none;
-      border-radius: 8px; border: 1px solid #444; transition: 0.2s;
+      display: inline-block; margin: 8px; padding: 12px 24px;
+      background: #181824; color: #fff; text-decoration: none;
+      border-radius: 8px; border: 1px solid #333; transition: 0.2s;
     }
-    .links a:hover { background: #333; }
-    footer { margin-top: 60px; color: #666; font-size: 0.9rem; }
-    #txStatus { margin-top: 10px; font-size: 0.9rem; color: #10b981; word-break: break-all; }
+    .links a:hover { border-color: #3b82f6; }
+    footer { margin-top: 50px; color: #666; font-size: 0.85rem; }
+    #txStatus { margin-top: 10px; font-size: 0.9rem; word-break: break-all; }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="logo">SI</div>
     <h1>Super iNtelligence Crypto Currency</h1>
     <div class="ticker">SICC</div>
+
+    <!-- Hero Banner Image -->
+    <div class="hero-banner">
+      <img src="sicc-hero.jpg" alt="Super iNtelligence Crypto Currency Artwork">
+    </div>
+
+    <!-- Interactive Colorful Action Tabs -->
+    <div class="action-tabs">
+      <button class="tab-btn btn-launch" onclick="connectWallet()">Launch App</button>
+      <button class="tab-btn btn-community" onclick="alert('Community channels launching soon!')">Join Community</button>
+      <a href="https://sepolia.etherscan.io/address/0x31CDd1ADe0b4Cb8d91aD65BF06CAA40c6eE18090#code" target="_blank" class="tab-btn btn-docs">Explore Docs</a>
+    </div>
 
     <p class="description">
       Super iNtelligence Crypto Currency (SICC) is an ERC-20 token deployed on the Sepolia testnet.
       It represents a conceptual exploration of artificial superintelligence within a blockchain framework.
     </p>
 
-    <!-- Wallet & Balance Section -->
+    <!-- Wallet & Balance Card -->
     <div class="card card-center">
-      <button id="connectWalletBtn" class="btn" onclick="connectWallet()">Connect Wallet</button>
+      <button id="connectWalletBtn" class="btn-primary" onclick="connectWallet()">Connect Wallet</button>
       <p id="walletAddress"></p>
       <p id="tokenBalance"></p>
       <div>
-        <button id="addTokenBtn" class="btn btn-secondary" onclick="addTokenToWallet()">Add SICC to MetaMask</button>
+        <button id="addTokenBtn" class="btn-secondary" onclick="addTokenToWallet()">Add SICC to MetaMask</button>
       </div>
     </div>
 
-    <!-- Transfer Form Section -->
+    <!-- Transfer Interface Card -->
     <div class="card">
       <h3 style="margin-bottom: 15px; color: #fff; text-align: center;">Transfer SICC</h3>
       <div class="form-group">
@@ -107,11 +182,11 @@
         <label>Amount (SICC)</label>
         <input type="number" id="transferAmount" placeholder="100">
       </div>
-      <button class="btn" style="width: 100%;" onclick="transferTokens()">Send SICC</button>
+      <button class="btn-primary" style="width: 100%;" onclick="transferTokens()">Send SICC</button>
       <p id="txStatus"></p>
     </div>
 
-    <!-- Token Information Box -->
+    <!-- Token Information Card -->
     <div class="card info-box">
       <p><strong>Network:</strong> Ethereum Sepolia Testnet</p>
       <p><strong>Token Standard:</strong> ERC-20</p>
@@ -121,7 +196,7 @@
       <div class="contract">0x31CDd1ADe0b4Cb8d91aD65BF06CAA40c6eE18090</div>
     </div>
 
-    <!-- External Links -->
+    <!-- External Explorer Links -->
     <div class="links">
       <a href="https://sepolia.etherscan.io/token/0x31CDd1ADe0b4Cb8d91aD65BF06CAA40c6eE18090" target="_blank">View on Etherscan</a>
       <a href="https://sepolia.etherscan.io/address/0x31CDd1ADe0b4Cb8d91aD65BF06CAA40c6eE18090#code" target="_blank">View Contract Code</a>
@@ -133,7 +208,7 @@
     </footer>
   </div>
 
-  <!-- Web3 Logic Script -->
+  <!-- Web3 Integration Script -->
   <script>
     const CONTRACT_ADDRESS = "0x31CDd1ADe0b4Cb8d91aD65BF06CAA40c6eE18090";
     const ABI = [
@@ -148,7 +223,7 @@
           const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
           const account = accounts[0];
           
-          document.getElementById('connectWalletBtn').innerText = 'Connected';
+          document.getElementById('connectWalletBtn').innerText = 'Wallet Connected';
           document.getElementById('walletAddress').innerText = 'Address: ' + account;
 
           await fetchBalance(account);
@@ -210,7 +285,7 @@
 
       try {
         statusEl.style.color = "#3b82f6";
-        statusEl.innerText = "Waiting for transaction confirmation...";
+        statusEl.innerText = "Waiting for transaction confirmation in MetaMask...";
 
         const provider = new ethers.providers.Web3Provider(window.ethereum);
         const signer = provider.getSigner();
@@ -225,7 +300,6 @@
         statusEl.style.color = "#10b981";
         statusEl.innerText = "Transfer successful!";
         
-        // Refresh balance
         const accounts = await window.ethereum.request({ method: 'eth_accounts' });
         if (accounts.length > 0) {
           await fetchBalance(accounts[0]);
