@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Strict Content Security Policy Header for Web3 Security -->
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src *;">
-  <title>Super iNtelligence Crypto Currency (SICC) | Secure Command Center</title>
+  <title>Super iNtelligence Crypto Currency (SiCC) | Secure Command Center</title>
   <!-- Google Fonts: Orbitron & Inter -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <!-- Ethers.js CDN -->
@@ -63,38 +63,22 @@
       align-items: center;
     }
 
+    /* Vector Logo Mark: Hexagon Node + SiCC Wordmark */
     .brand-logo {
       display: flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 8px;
+      animation: pulse-glow 3s infinite ease-in-out;
     }
-    .node-icon {
-      width: 48px;
-      height: 48px;
-      background: linear-gradient(135deg, #2563eb, #9333ea);
-      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 0 20px rgba(147, 51, 234, 0.5);
+    .logo-svg {
+      width: 250px;
+      height: 65px;
+      filter: drop-shadow(0 0 15px rgba(56, 189, 248, 0.6));
     }
-    .node-inner {
-      width: 18px;
-      height: 18px;
-      background: #05070c;
-      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-      position: relative;
-    }
-    .node-inner::after {
-      content: "";
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 6px; height: 6px;
-      background: #38bdf8;
-      border-radius: 50%;
-      box-shadow: 0 0 8px #38bdf8;
+    @keyframes pulse-glow {
+      0%, 100% { transform: scale(1); filter: drop-shadow(0 0 12px rgba(56, 189, 248, 0.5)); }
+      50% { transform: scale(1.02); filter: drop-shadow(0 0 22px rgba(147, 51, 234, 0.7)); }
     }
 
     h1 {
@@ -105,7 +89,7 @@
       color: #ffffff;
       text-transform: uppercase;
       text-shadow: 0 0 20px rgba(147, 51, 234, 0.4);
-      margin-top: 10px;
+      margin-top: 5px;
     }
 
     .container { max-width: 1240px; margin: 0 auto; padding: 20px 24px; }
@@ -241,13 +225,51 @@
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- Header with Vector 'SiCC' Logo Mark -->
   <div class="hero-container">
     <div class="hero-content">
       <div class="brand-logo">
-        <div class="node-icon">
-          <div class="node-inner"></div>
-        </div>
+        <svg class="logo-svg" viewBox="0 0 280 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="primaryGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#38bdf8"/>
+              <stop offset="50%" stop-color="#2563eb"/>
+              <stop offset="100%" stop-color="#9333ea"/>
+            </linearGradient>
+            <filter id="svgGlow" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="4" result="blur"/>
+              <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+            </filter>
+          </defs>
+
+          <!-- Hexagon Intelligence Node Icon -->
+          <g transform="translate(5, 5)">
+            <polygon points="30,5 55,20 55,50 30,65 5,50 5,20" stroke="url(#primaryGlow)" stroke-width="3" fill="#090a0f" filter="url(#svgGlow)"/>
+            <circle cx="30" cy="35" r="7" fill="#38bdf8" filter="url(#svgGlow)"/>
+            <path d="M21 35 L39 35" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+            <path d="M30 26 L30 44" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+          </g>
+
+          <!-- Vector Wordmark: SiCC -->
+          <g transform="translate(75, 5)">
+            <!-- Capital S -->
+            <path d="M34 18 C34 10, 14 10, 14 25 C14 40, 34 36, 34 51 C34 64, 14 64, 14 52" stroke="#ffffff" stroke-width="7" stroke-linecap="round" fill="none" filter="url(#svgGlow)"/>
+            
+            <!-- Lowercase i with glowing intelligence dot -->
+            <circle cx="56" cy="18" r="4.5" fill="#38bdf8" filter="url(#svgGlow)"/>
+            <path d="M56 27 L56 55" stroke="#ffffff" stroke-width="7" stroke-linecap="round"/>
+
+            <!-- Lowercase c -->
+            <path d="M98 27 C88 22, 74 24, 74 41 C74 58, 88 60, 98 55" stroke="#38bdf8" stroke-width="7" stroke-linecap="round" fill="none" filter="url(#svgGlow)"/>
+
+            <!-- Lowercase c -->
+            <path d="M136 27 C126 22, 112 24, 112 41 C112 58, 126 60, 136 55" stroke="#9333ea" stroke-width="7" stroke-linecap="round" fill="none" filter="url(#svgGlow)"/>
+
+            <!-- Tech Circuit Connector Line -->
+            <path d="M152 41 L185 41" stroke="url(#primaryGlow)" stroke-width="2.5" stroke-dasharray="4 3"/>
+            <circle cx="190" cy="41" r="3.5" fill="#38bdf8" filter="url(#svgGlow)"/>
+          </g>
+        </svg>
       </div>
       <h1>Super iNtelligence Crypto Currency</h1>
     </div>
@@ -266,22 +288,22 @@
         <div style="text-align: center; margin-bottom: 15px;">
           <button id="connectWalletBtn" class="btn-primary" onclick="connectWallet()">Connect Wallet</button>
           <p id="walletAddress"></p>
-          <p id="tokenBalance">SICC Balance: --</p>
-          <button id="addTokenBtn" class="btn-secondary" onclick="addTokenToWallet()">Add SICC to MetaMask</button>
+          <p id="tokenBalance">SiCC Balance: --</p>
+          <button id="addTokenBtn" class="btn-secondary" onclick="addTokenToWallet()">Add SiCC to MetaMask</button>
         </div>
         
         <hr style="border: 0; border-top: 1px solid rgba(147, 51, 234, 0.2); margin: 12px 0;">
         
-        <h3 style="color: #c084fc; text-align: center; margin-bottom: 10px; font-size: 0.95rem; font-family: 'Orbitron', sans-serif;">Transfer SICC</h3>
+        <h3 style="color: #c084fc; text-align: center; margin-bottom: 10px; font-size: 0.95rem; font-family: 'Orbitron', sans-serif;">Transfer SiCC</h3>
         <div class="form-group">
           <label>Recipient Address</label>
           <input type="text" id="recipientAddress" placeholder="0x..." autocomplete="off">
         </div>
         <div class="form-group">
-          <label>Amount (SICC)</label>
+          <label>Amount (SiCC)</label>
           <input type="number" id="transferAmount" placeholder="100" min="0" step="any">
         </div>
-        <button id="sendBtn" class="btn-primary" style="width: 100%;" onclick="transferTokens()">Send SICC</button>
+        <button id="sendBtn" class="btn-primary" style="width: 100%;" onclick="transferTokens()">Send SiCC</button>
         <p id="txStatus"></p>
       </div>
 
@@ -290,7 +312,7 @@
         <h3 style="color: #c084fc; margin-bottom: 12px; text-align: center; font-size: 0.95rem; font-family: 'Orbitron', sans-serif;">Token Information</h3>
         <p><strong>Network:</strong> Ethereum Sepolia Testnet</p>
         <p><strong>Token Standard:</strong> ERC-20 Secure</p>
-        <p><strong>Total Supply:</strong> 1,000,000,000 SICC</p>
+        <p><strong>Total Supply:</strong> 1,000,000,000 SiCC</p>
         <p><strong>Decimals:</strong> 18</p>
         <p style="margin-top: 10px;"><strong>Contract Address:</strong> (Click to copy)</p>
         <div class="contract-wrapper" onclick="copyContractAddress()" title="Click to copy address">
@@ -308,11 +330,11 @@
     </div>
 
     <div class="bottom-description">
-      Super iNtelligence Crypto Currency (SICC) is an ERC-20 token deployed on the Sepolia testnet. A conceptual exploration of artificial superintelligence within a blockchain framework.
+      Super iNtelligence Crypto Currency (SiCC) is an ERC-20 token deployed on the Sepolia testnet. A conceptual exploration of artificial superintelligence within a blockchain framework.
     </div>
 
     <footer>
-      Super iNtelligence Crypto Currency (SICC) &bull; Testnet token for educational purposes only.
+      Super iNtelligence Crypto Currency (SiCC) &bull; Testnet token for educational purposes only.
     </footer>
   </div>
 
@@ -373,11 +395,10 @@
         const decimals = await contract.decimals();
         const balanceFormatted = ethers.utils.formatUnits(balanceWei, decimals);
 
-        document.getElementById('tokenBalance').innerText = 'SICC Balance: ' + parseFloat(balanceFormatted).toFixed(2) + ' SICC';
+        document.getElementById('tokenBalance').innerText = 'SiCC Balance: ' + parseFloat(balanceFormatted).toFixed(2) + ' SiCC';
       } catch (error) {
         console.error("Error fetching balance:", error);
-        // Fallback display ifdecimals or contract call fails
-        document.getElementById('tokenBalance').innerText = 'SICC Balance: 0.00 SICC';
+        document.getElementById('tokenBalance').innerText = 'SiCC Balance: 0.00 SiCC';
       }
     }
 
@@ -392,7 +413,7 @@
               type: 'ERC20',
               options: {
                 address: CONTRACT_ADDRESS,
-                symbol: 'SICC',
+                symbol: 'SiCC',
                 decimals: 18,
               },
             },
