@@ -27,7 +27,7 @@
     .hero-container {
       position: relative;
       width: 100%;
-      padding: 20px 20px;
+      padding: 24px 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -55,7 +55,7 @@
     .hero-content {
       position: relative;
       z-index: 2;
-      max-width: 900px;
+      max-width: 1100px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -66,12 +66,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
       animation: pulse-glow 3s infinite ease-in-out;
     }
     .logo-svg {
-      width: 240px;
-      height: 60px;
+      width: 250px;
+      height: 65px;
       filter: drop-shadow(0 0 15px rgba(56, 189, 248, 0.6));
     }
     @keyframes pulse-glow {
@@ -82,7 +82,7 @@
     /* SpaceX-inspired Headline using Orbitron font */
     h1 {
       font-family: 'Orbitron', sans-serif;
-      font-size: 1.7rem;
+      font-size: 1.8rem;
       font-weight: 900;
       letter-spacing: 2px;
       color: #ffffff;
@@ -90,22 +90,23 @@
       text-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
     }
 
-    .container { max-width: 1050px; margin: 0 auto; padding: 12px 20px; }
+    /* Wider, Spacious Container layout */
+    .container { max-width: 1240px; margin: 0 auto; padding: 20px 24px; }
     
     /* Action Tabs */
     .action-tabs {
       display: flex;
       justify-content: center;
-      gap: 10px;
-      margin: 12px 0;
+      gap: 16px;
+      margin: 18px 0;
       flex-wrap: wrap;
     }
     .tab-btn {
-      padding: 7px 16px;
+      padding: 9px 22px;
       border: none;
       border-radius: 8px;
       font-weight: bold;
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       color: #fff;
       cursor: pointer;
       text-decoration: none;
@@ -117,26 +118,26 @@
     .btn-community { background: linear-gradient(135deg, #0284c7, #06b6d4); color: #fff; }
     .btn-docs { background: linear-gradient(135deg, #1e293b, #334155); color: #38bdf8; border: 1px solid #0284c7; }
 
-    /* Dashboard Grid Layout */
+    /* Expanded Horizontal Dashboard Grid Layout with more gap */
     .dashboard-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 15px;
+      gap: 28px;
       text-align: left;
     }
-    @media (max-width: 768px) { .dashboard-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 900px) { .dashboard-grid { grid-template-columns: 1fr; } }
 
     .card {
       background: rgba(15, 23, 42, 0.85);
       backdrop-filter: blur(10px);
       border-radius: 12px;
-      padding: 15px;
+      padding: 22px;
       border: 1px solid rgba(255, 255, 255, 0.08);
       box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
     
     .btn-primary {
-      padding: 8px 16px;
+      padding: 9px 18px;
       background: linear-gradient(90deg, #2563eb, #0284c7);
       color: #fff;
       border: none;
@@ -152,40 +153,40 @@
       border: 1px solid #3b82f6;
       color: #60a5fa;
       font-size: 0.75rem;
-      padding: 6px 12px;
+      padding: 7px 14px;
       border-radius: 6px;
       cursor: pointer;
       font-weight: 600;
-      margin-top: 6px;
+      margin-top: 8px;
     }
     
-    #walletAddress { font-size: 0.75rem; color: #94a3b8; word-break: break-all; margin-top: 6px; }
-    #tokenBalance { font-size: 0.95rem; color: #10b981; font-weight: bold; margin-top: 4px; }
+    #walletAddress { font-size: 0.75rem; color: #94a3b8; word-break: break-all; margin-top: 8px; }
+    #tokenBalance { font-size: 1rem; color: #10b981; font-weight: bold; margin-top: 6px; }
     
-    .form-group { margin-bottom: 8px; }
-    .form-group label { display: block; margin-bottom: 3px; color: #94a3b8; font-size: 0.75rem; }
+    .form-group { margin-bottom: 12px; }
+    .form-group label { display: block; margin-bottom: 4px; color: #94a3b8; font-size: 0.75rem; }
     .form-group input {
-      width: 100%; padding: 7px; background: #0b0f19; border: 1px solid #1e293b;
-      color: #fff; border-radius: 6px; font-family: monospace; font-size: 0.8rem;
+      width: 100%; padding: 8px; background: #0b0f19; border: 1px solid #1e293b;
+      color: #fff; border-radius: 6px; font-family: monospace; font-size: 0.85rem;
     }
     
-    .info-box p { margin: 5px 0; font-size: 0.8rem; }
+    .info-box p { margin: 8px 0; font-size: 0.85rem; }
     .info-box strong { color: #f1f5f9; }
     
     /* Interactive Copy Contract Box with Pure White Text */
     .contract-wrapper {
       position: relative;
       cursor: pointer;
-      margin-top: 4px;
+      margin-top: 6px;
     }
     .contract {
-      background: #0b0f19; padding: 7px 32px 7px 8px; border-radius: 6px;
+      background: #0b0f19; padding: 8px 36px 8px 10px; border-radius: 6px;
       font-family: monospace; word-break: break-all;
-      border: 1px solid #3b82f6; color: #ffffff; font-size: 0.75rem; font-weight: 500;
+      border: 1px solid #3b82f6; color: #ffffff; font-size: 0.8rem; font-weight: 500;
     }
     .copy-icon {
-      position: absolute; right: 8px; top: 50%; transform: translateY(-50%);
-      width: 14px; height: 14px; fill: #ffffff;
+      position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
+      width: 15px; height: 15px; fill: #ffffff;
     }
     @keyframes flash-green {
       0% { color: #ffffff; }
@@ -194,26 +195,26 @@
     }
     .flash-green-text { animation: flash-green 0.6s ease-out; }
 
-    .links { margin-top: 8px; display: flex; gap: 6px; }
+    .links { margin-top: 12px; display: flex; gap: 8px; }
     .links a {
-      flex: 1; text-align: center; padding: 5px 8px;
+      flex: 1; text-align: center; padding: 6px 10px;
       background: #0f172a; color: #cbd5e1; text-decoration: none;
-      border-radius: 6px; border: 1px solid #1e293b; font-size: 0.75rem;
+      border-radius: 6px; border: 1px solid #1e293b; font-size: 0.8rem;
     }
     .links a:hover { border-color: #3b82f6; color: #38bdf8; }
     
     /* Bottom Description & Footer */
     .bottom-description {
       text-align: center;
-      margin-top: 15px;
-      font-size: 0.8rem;
+      margin-top: 20px;
+      font-size: 0.82rem;
       color: #94a3b8;
-      max-width: 800px;
+      max-width: 900px;
       margin-left: auto;
       margin-right: auto;
     }
-    footer { text-align: center; margin-top: 8px; color: #64748b; font-size: 0.7rem; }
-    #txStatus { margin-top: 6px; font-size: 0.75rem; word-break: break-all; }
+    footer { text-align: center; margin-top: 10px; color: #64748b; font-size: 0.7rem; }
+    #txStatus { margin-top: 8px; font-size: 0.8rem; word-break: break-all; }
   </style>
 </head>
 <body>
@@ -277,20 +278,20 @@
       <a href="https://sepolia.etherscan.io/address/0x31CDd1ADe0b4Cb8d91aD65BF06CAA40c6eE18090#code" target="_blank" class="tab-btn btn-docs">Explore Docs</a>
     </div>
 
-    <!-- Side-by-Side Dashboard Grid -->
+    <!-- Side-by-Side Dashboard Grid with Increased Width & Spacing -->
     <div class="dashboard-grid">
       <!-- Left Column: Wallet & Transfer Form -->
       <div class="card">
-        <div style="text-align: center; margin-bottom: 10px;">
+        <div style="text-align: center; margin-bottom: 15px;">
           <button id="connectWalletBtn" class="btn-primary" onclick="connectWallet()">Connect Wallet</button>
           <p id="walletAddress"></p>
           <p id="tokenBalance"></p>
           <button id="addTokenBtn" class="btn-secondary" onclick="addTokenToWallet()">Add SICC to MetaMask</button>
         </div>
         
-        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 8px 0;">
+        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 12px 0;">
         
-        <h3 style="color: #f8fafc; text-align: center; margin-bottom: 6px; font-size: 0.9rem;">Transfer SICC</h3>
+        <h3 style="color: #f8fafc; text-align: center; margin-bottom: 10px; font-size: 0.95rem;">Transfer SICC</h3>
         <div class="form-group">
           <label>Recipient Address</label>
           <input type="text" id="recipientAddress" placeholder="0x...">
@@ -305,12 +306,12 @@
 
       <!-- Right Column: Token Information -->
       <div class="card info-box">
-        <h3 style="color: #f8fafc; margin-bottom: 8px; text-align: center; font-size: 0.9rem;">Token Information</h3>
+        <h3 style="color: #f8fafc; margin-bottom: 12px; text-align: center; font-size: 0.95rem;">Token Information</h3>
         <p><strong>Network:</strong> Ethereum Sepolia Testnet</p>
         <p><strong>Token Standard:</strong> ERC-20</p>
         <p><strong>Total Supply:</strong> 1,000,000,000 SICC</p>
         <p><strong>Decimals:</strong> 18</p>
-        <p style="margin-top: 6px;"><strong>Contract Address:</strong> (Click to copy)</p>
+        <p style="margin-top: 10px;"><strong>Contract Address:</strong> (Click to copy)</p>
         <div class="contract-wrapper" onclick="copyContractAddress()" title="Click to copy address">
           <div class="contract" id="contractAddress">0x31CDd1ADe0b4Cb8d91aD65BF06CAA40c6eE18090</div>
           <svg class="copy-icon" viewBox="0 0 24 24">
@@ -325,7 +326,7 @@
       </div>
     </div>
 
-    <!-- Moved Description Text to Bottom -->
+    <!-- Bottom Description Text -->
     <div class="bottom-description">
       Super iNtelligence Crypto Currency (SICC) is an ERC-20 token deployed on the Sepolia testnet. A conceptual exploration of artificial superintelligence within a blockchain framework.
     </div>
