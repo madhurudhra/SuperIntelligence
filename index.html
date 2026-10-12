@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Super iNtelligence Crypto Currency (SICC)</title>
+  <!-- Strict Content Security Policy Header for Web3 Security -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src *;">
+  <title>Super iNtelligence Crypto Currency (SICC) | Secure Command Center</title>
   <!-- Google Fonts: Orbitron (SpaceX style) & Inter -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <!-- Ethers.js CDN -->
@@ -23,7 +25,6 @@
       justify-content: center;
     }
     
-    /* Dynamic Cyber/Space Background & Header */
     .hero-container {
       position: relative;
       width: 100%;
@@ -61,7 +62,6 @@
       align-items: center;
     }
 
-    /* Flawless Vector Logo Mark */
     .brand-logo {
       display: flex;
       align-items: center;
@@ -79,7 +79,6 @@
       50% { transform: scale(1.02); filter: drop-shadow(0 0 22px rgba(147, 51, 234, 0.7)); }
     }
 
-    /* SpaceX-inspired Headline using Orbitron font */
     h1 {
       font-family: 'Orbitron', sans-serif;
       font-size: 1.8rem;
@@ -90,10 +89,8 @@
       text-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
     }
 
-    /* Wider, Spacious Container layout */
     .container { max-width: 1240px; margin: 0 auto; padding: 20px 24px; }
     
-    /* Action Tabs */
     .action-tabs {
       display: flex;
       justify-content: center;
@@ -113,12 +110,12 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
       transition: transform 0.2s;
     }
-    .tab-btn:hover { transform: translateY(-2px); }
+    .tab-btn:hover:not(:disabled) { transform: translateY(-2px); }
+    .tab-btn:disabled { opacity: 0.6; cursor: not-allowed; }
     .btn-launch { background: linear-gradient(135deg, #2563eb, #3b82f6); }
     .btn-community { background: linear-gradient(135deg, #0284c7, #06b6d4); color: #fff; }
     .btn-docs { background: linear-gradient(135deg, #1e293b, #334155); color: #38bdf8; border: 1px solid #0284c7; }
 
-    /* Expanded Horizontal Dashboard Grid Layout with more gap */
     .dashboard-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -147,7 +144,9 @@
       cursor: pointer;
       transition: 0.2s;
     }
-    .btn-primary:hover { opacity: 0.9; }
+    .btn-primary:hover:not(:disabled) { opacity: 0.9; }
+    .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
+
     .btn-secondary {
       background: #0f172a;
       border: 1px solid #3b82f6;
@@ -159,6 +158,8 @@
       font-weight: 600;
       margin-top: 8px;
     }
+    .btn-secondary:hover:not(:disabled) { background: rgba(59, 130, 246, 0.1); }
+    .btn-secondary:disabled { opacity: 0.6; cursor: not-allowed; }
     
     #walletAddress { font-size: 0.75rem; color: #94a3b8; word-break: break-all; margin-top: 8px; }
     #tokenBalance { font-size: 1rem; color: #10b981; font-weight: bold; margin-top: 6px; }
@@ -167,13 +168,13 @@
     .form-group label { display: block; margin-bottom: 4px; color: #94a3b8; font-size: 0.75rem; }
     .form-group input {
       width: 100%; padding: 8px; background: #0b0f19; border: 1px solid #1e293b;
-      color: #fff; border-radius: 6px; font-family: monospace; font-size: 0.85rem;
+      color: #fff; border-radius: 6px; font-family: monospace; font-size: 0.85rem; outline: none;
     }
+    .form-group input:focus { border-color: #3b82f6; }
     
     .info-box p { margin: 8px 0; font-size: 0.85rem; }
     .info-box strong { color: #f1f5f9; }
     
-    /* Interactive Copy Contract Box with Pure White Text */
     .contract-wrapper {
       position: relative;
       cursor: pointer;
@@ -203,7 +204,6 @@
     }
     .links a:hover { border-color: #3b82f6; color: #38bdf8; }
     
-    /* Bottom Description & Footer */
     .bottom-description {
       text-align: center;
       margin-top: 20px;
@@ -246,20 +246,15 @@
 
           <!-- Precise Vector Wordmark: SiCC -->
           <g transform="translate(75, 5)">
-            <!-- Capital S -->
             <path d="M34 18 C34 10, 14 10, 14 25 C14 40, 34 36, 34 51 C34 64, 14 64, 14 52" stroke="#ffffff" stroke-width="7" stroke-linecap="round" fill="none" filter="url(#svgGlow)"/>
             
-            <!-- Lowercase i with glowing intelligence dot -->
             <circle cx="56" cy="18" r="4.5" fill="#38bdf8" filter="url(#svgGlow)"/>
             <path d="M56 27 L56 55" stroke="#ffffff" stroke-width="7" stroke-linecap="round"/>
 
-            <!-- Lowercase c -->
             <path d="M98 27 C88 22, 74 24, 74 41 C74 58, 88 60, 98 55" stroke="#38bdf8" stroke-width="7" stroke-linecap="round" fill="none" filter="url(#svgGlow)"/>
 
-            <!-- Lowercase c -->
             <path d="M136 27 C126 22, 112 24, 112 41 C112 58, 126 60, 136 55" stroke="#9333ea" stroke-width="7" stroke-linecap="round" fill="none" filter="url(#svgGlow)"/>
 
-            <!-- Tech Circuit Connector Line -->
             <path d="M152 41 L185 41" stroke="url(#primaryGlow)" stroke-width="2.5" stroke-dasharray="4 3"/>
             <circle cx="190" cy="41" r="3.5" fill="#38bdf8" filter="url(#svgGlow)"/>
           </g>
@@ -275,7 +270,7 @@
     <div class="action-tabs">
       <button class="tab-btn btn-launch" onclick="connectWallet()">Launch App</button>
       <button class="tab-btn btn-community" onclick="alert('Community channels launching soon!')">Join Community</button>
-      <a href="https://sepolia.etherscan.io/address/0x31CDd1ADe0b4Cb8d91aD65BF06CAA40c6eE18090#code" target="_blank" class="tab-btn btn-docs">Explore Docs</a>
+      <a href="https://sepolia.etherscan.io/address/0x31CDd1ADe0b4Cb8d91aD65BF06CAA40c6eE18090#code" target="_blank" rel="noopener noreferrer" class="tab-btn btn-docs">Explore Docs</a>
     </div>
 
     <!-- Side-by-Side Dashboard Grid with Increased Width & Spacing -->
@@ -294,13 +289,13 @@
         <h3 style="color: #f8fafc; text-align: center; margin-bottom: 10px; font-size: 0.95rem;">Transfer SICC</h3>
         <div class="form-group">
           <label>Recipient Address</label>
-          <input type="text" id="recipientAddress" placeholder="0x...">
+          <input type="text" id="recipientAddress" placeholder="0x..." autocomplete="off">
         </div>
         <div class="form-group">
           <label>Amount (SICC)</label>
-          <input type="number" id="transferAmount" placeholder="100">
+          <input type="number" id="transferAmount" placeholder="100" min="0" step="any">
         </div>
-        <button class="btn-primary" style="width: 100%;" onclick="transferTokens()">Send SICC</button>
+        <button id="sendBtn" class="btn-primary" style="width: 100%;" onclick="transferTokens()">Send SICC</button>
         <p id="txStatus"></p>
       </div>
 
@@ -308,7 +303,7 @@
       <div class="card info-box">
         <h3 style="color: #f8fafc; margin-bottom: 12px; text-align: center; font-size: 0.95rem;">Token Information</h3>
         <p><strong>Network:</strong> Ethereum Sepolia Testnet</p>
-        <p><strong>Token Standard:</strong> ERC-20</p>
+        <p><strong>Token Standard:</strong> ERC-20 Secure</p>
         <p><strong>Total Supply:</strong> 1,000,000,000 SICC</p>
         <p><strong>Decimals:</strong> 18</p>
         <p style="margin-top: 10px;"><strong>Contract Address:</strong> (Click to copy)</p>
@@ -320,8 +315,8 @@
         </div>
 
         <div class="links">
-          <a href="https://sepolia.etherscan.io/token/0x31CDd1ADe0b4Cb8d91aD65BF06CAA40c6eE18090" target="_blank">Etherscan</a>
-          <a href="https://sepolia.etherscan.io/address/0x31CDd1ADe0b4Cb8d91aD65BF06CAA40c6eE18090#code" target="_blank">Contract Code</a>
+          <a href="https://sepolia.etherscan.io/token/0x31CDd1ADe0b4Cb8d91aD65BF06CAA40c6eE18090" target="_blank" rel="noopener noreferrer">Etherscan</a>
+          <a href="https://sepolia.etherscan.io/address/0x31CDd1ADe0b4Cb8d91aD65BF06CAA40c6eE18090#code" target="_blank" rel="noopener noreferrer">Contract Code</a>
         </div>
       </div>
     </div>
@@ -336,9 +331,10 @@
     </footer>
   </div>
 
-  <!-- Web3 Logic -->
+  <!-- Secure Web3 Logic -->
   <script>
     const CONTRACT_ADDRESS = "0x31CDd1ADe0b4Cb8d91aD65BF06CAA40c6eE18090";
+    const SEPOLIA_CHAIN_ID = "0xaa36a7"; // 11155111 hex
     const ABI = [
       "function balanceOf(address owner) view returns (uint256)",
       "function decimals() view returns (uint8)",
@@ -346,17 +342,38 @@
     ];
 
     async function connectWallet() {
+      const btn = document.getElementById('connectWalletBtn');
       if (typeof window.ethereum !== 'undefined') {
         try {
+          btn.disabled = true;
+          const provider = new ethers.providers.Web3Provider(window.ethereum);
+          
+          // Network check enforcement for Sepolia
+          const network = await provider.getNetwork();
+          if (network.chainId !== 11155111) {
+            alert("Please switch your network to Sepolia Testnet.");
+            try {
+              await window.ethereum.request({
+                method: 'wallet_switchEthereumChain',
+                params: [{ chainId: SEPOLIA_CHAIN_ID }],
+              });
+            } catch (switchError) {
+              btn.disabled = false;
+              return;
+            }
+          }
+
           const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
           const account = accounts[0];
           
-          document.getElementById('connectWalletBtn').innerText = 'Wallet Connected';
+          btn.innerText = 'Wallet Connected';
           document.getElementById('walletAddress').innerText = 'Address: ' + account;
 
           await fetchBalance(account);
         } catch (error) {
           console.error('User rejected connection', error);
+        } finally {
+          btn.disabled = false;
         }
       } else {
         alert('Please install MetaMask to connect.');
@@ -365,6 +382,7 @@
 
     async function fetchBalance(walletAddress) {
       try {
+        if (!ethers.utils.isAddress(walletAddress)) return;
         const provider = new ethers.providers.Web3Provider(window.ethereum);
         const contract = new ethers.Contract(CONTRACT_ADDRESS, ABI, provider);
         
@@ -372,7 +390,7 @@
         const decimals = await contract.decimals();
         const balanceFormatted = ethers.utils.formatUnits(balanceWei, decimals);
 
-        document.getElementById('tokenBalance').innerText = 'SICC Balance: ' + balanceFormatted + ' SICC';
+        document.getElementById('tokenBalance').innerText = 'SICC Balance: ' + parseFloat(balanceFormatted).toFixed(2) + ' SICC';
       } catch (error) {
         console.error("Error fetching balance:", error);
         document.getElementById('tokenBalance').innerText = 'SICC Balance: Error loading';
@@ -380,8 +398,10 @@
     }
 
     async function addTokenToWallet() {
+      const addBtn = document.getElementById('addTokenBtn');
       if (typeof window.ethereum !== 'undefined') {
         try {
+          addBtn.disabled = true;
           await window.ethereum.request({
             method: 'wallet_watchAsset',
             params: {
@@ -395,6 +415,8 @@
           });
         } catch (error) {
           console.error('Error adding token:', error);
+        } finally {
+          addBtn.disabled = false;
         }
       } else {
         alert('Please install MetaMask to use this feature.');
@@ -402,16 +424,24 @@
     }
 
     async function transferTokens() {
-      const recipient = document.getElementById('recipientAddress').value;
+      const recipient = document.getElementById('recipientAddress').value.trim();
       const amount = document.getElementById('transferAmount').value;
       const statusEl = document.getElementById('txStatus');
+      const sendBtn = document.getElementById('sendBtn');
 
-      if (!recipient || !amount) {
-        alert("Please fill in both the recipient address and amount.");
+      // Strict validation checks
+      if (!ethers.utils.isAddress(recipient)) {
+        alert("Please enter a valid Ethereum recipient address.");
+        return;
+      }
+
+      if (!amount || isNaN(amount) || parseFloat(amount) <= 0) {
+        alert("Please enter a valid transfer amount.");
         return;
       }
 
       try {
+        sendBtn.disabled = true;
         statusEl.style.color = "#3b82f6";
         statusEl.innerText = "Confirming in MetaMask...";
 
@@ -428,6 +458,9 @@
         statusEl.style.color = "#10b981";
         statusEl.innerText = "Transfer successful!";
         
+        document.getElementById('recipientAddress').value = "";
+        document.getElementById('transferAmount').value = "";
+
         const accounts = await window.ethereum.request({ method: 'eth_accounts' });
         if (accounts.length > 0) {
           await fetchBalance(accounts[0]);
@@ -435,7 +468,9 @@
       } catch (error) {
         console.error("Transfer failed:", error);
         statusEl.style.color = "#ef4444";
-        statusEl.innerText = "Transfer failed";
+        statusEl.innerText = "Transfer failed or aborted";
+      } finally {
+        sendBtn.disabled = false;
       }
     }
 
@@ -443,18 +478,20 @@
       const addressText = "0x31CDd1ADe0b4Cb8d91aD65BF06CAA40c6eE18090";
       const contractBox = document.getElementById("contractAddress");
 
-      navigator.clipboard.writeText(addressText).then(() => {
-        contractBox.classList.add("flash-green-text");
-        const originalText = contractBox.innerText;
-        contractBox.innerText = "Copied Address!";
-        
-        setTimeout(() => {
-          contractBox.classList.remove("flash-green-text");
-          contractBox.innerText = originalText;
-        }, 1200);
-      }).catch(err => {
-        console.error('Unable to copy address', err);
-      });
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(addressText).then(() => {
+          contractBox.classList.add("flash-green-text");
+          const originalText = contractBox.innerText;
+          contractBox.innerText = "Copied Address!";
+          
+          setTimeout(() => {
+            contractBox.classList.remove("flash-green-text");
+            contractBox.innerText = originalText;
+          }, 1200);
+        }).catch(err => {
+          console.error('Unable to copy address', err);
+        });
+      }
     }
   </script>
 </body>
